@@ -1,25 +1,27 @@
 class Stack{
-  var stack:[Int]
+  var stack:[Any]
   init(){
     self.stack=[]
   }
   func IsEmpty()->Bool{
     return self.stack.count == 0
   }
-  func push(item:Int){
+  func push(item:Any){
     self.stack.append(item)
     print("item pushed")
   }
-  func pop()->Int{
+  func pop()->Any{
     if  self.IsEmpty(){
-      print("stack is empty")
+      return "stack is empty"
     }
     return self.stack.removeLast()
   }
 }
 //---main---
 var obj1=Stack()
-obj1.push(item:10 )
-obj1.push(item:20 )
-print(obj1.stack)
-print(obj1.pop())
+for _ in 1...5{
+ obj1.push(item:readLine()!) 
+}
+for _ in 1...5{
+  print(obj1.pop())
+}
